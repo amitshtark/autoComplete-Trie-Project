@@ -42,6 +42,10 @@ function showExit() {
 function showInvalidCommand() {
   console.log("Invalid command. Type 'help' for commands.");
 }
+function showError(message)
+{
+    console.log(`✗ Error: ${message}`);
+}
 
 module.exports = {
   showAdd,
@@ -50,5 +54,6 @@ module.exports = {
   showNotFound,
   showHelp,
   showExit,
-  showInvalidCommand
+  showInvalidCommand,
+  showError
 };
