@@ -1,0 +1,28 @@
+{
+  "name": "autocomplete-trie-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amitshtark/autoComplete-Trie-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/amitshtark/autoComplete-Trie-Project/issues"
+  },
+  "homepage": "https://github.com/amitshtark/autoComplete-Trie-Project#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
