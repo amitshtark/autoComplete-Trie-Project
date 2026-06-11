@@ -1,13 +1,14 @@
 # AutoComplete Trie Project
 
-A console-based autocomplete application built with a Trie data structure in JavaScript.
+Console-based autocomplete app using a Trie data structure in JavaScript.
 
 ## Features
 
 - Add words to the dictionary
-- Find if a word exists
+- Find existing words
 - Get autocomplete suggestions by prefix
-- Console interface with user commands
+- Rank suggestions by word usage frequency
+- Console commands
 - Unit tests with Jest
 
 ## Project Structure
@@ -49,6 +50,7 @@ npm test
 add <word>              - Add word to dictionary
 find <word>             - Check if word exists
 complete <prefix>       - Get completions
+use <word>              - Increase word usage frequency
 help                    - Show commands
 exit                    - Quit program
 ```
@@ -61,6 +63,9 @@ exit                    - Quit program
 
 > add car
 ✓ Added 'car' to dictionary
+
+> use cat
+✓ the word cat was used, updated frequency is 1
 
 > complete ca
 Suggestions for 'ca': cat, car

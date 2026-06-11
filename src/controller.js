@@ -30,7 +30,7 @@ function handleCommand(input)
             view.showError(`Missing word for ${command} command`);
             break;
         }
-        allWords = trie.predictWords(word);
+        const allWords = trie.predictWords(word);
         view.showSuggestions(word, allWords);
         break;
     }
@@ -52,10 +52,22 @@ function handleCommand(input)
         view.showHelp();
         break;
 
+
+    case "use":
+        if (!word)
+        {
+            view.showError(`Missing word for ${command} command`);
+            break;
+        }
+        let frequency = trie.useWord(word);
+        if(frequency !== null)
+            view.showUsed(word, frequency);
+        else
+            view.showNotUsed(word);
+        break;
+
     default:
         view.showError(`Unknown command '${command}'`);
-        console.log(
-        );
     }
 }
 module.exports = {handleCommand};

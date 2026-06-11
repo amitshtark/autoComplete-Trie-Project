@@ -4,6 +4,7 @@ class AutoCompleteTrie{
     {this.value = value;
      this.children = {};
      this.endOfWord = false;
+     this.frequency = 0;
     }
     addWord(word)
     {
@@ -36,7 +37,18 @@ class AutoCompleteTrie{
 
         const allWords = [];
         this._allWordsHelper(prefix, currentNode, allWords);
-        return allWords;
+        return allWords.sort((a,b) => b.frequency - a.frequency);
+    }
+    useWord(word)
+    {
+        let currentWord = this._getRemainingTree(word, this)
+        if(currentWord && currentWord.endOfWord)
+        {
+            currentWord.frequency++;
+            return currentWord.frequency;
+        }
+        else
+            return null;
     }
 
 
@@ -57,7 +69,7 @@ class AutoCompleteTrie{
     _allWordsHelper(prefix, node, allWords)
     {
         if(node.endOfWord)
-            allWords.push(prefix);
+            allWords.push({"word": prefix, "frequency": node.frequency});
 
         for (let char in node.children)
         {
