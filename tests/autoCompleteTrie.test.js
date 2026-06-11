@@ -1,4 +1,4 @@
-const AutoCompleteTrie = require("../src/AutoCompleteTrie");
+const AutoCompleteTrie = require("../src/autoCompleteTrie");
 
 test("should add first letter as child", () => {
     const root = new AutoCompleteTrie();
