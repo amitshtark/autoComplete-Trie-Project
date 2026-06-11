@@ -1,3 +1,9 @@
+function showWelcome() {
+  console.log("=== AutoComplete Trie Console ===");
+  console.log("Type 'help' for commands");
+}
+
+
 function showAdd(word) {
     console.log(`✓ Added '${word}' to dictionary`);
 }
@@ -17,65 +23,32 @@ function showNotFound(word) {
   console.log(`✗ '${word}' not found in dictionary`);
 }
 
-
-function showError(message) {
-  console.log(`✗ Error: ${message}`);
-}
-
-function showSuccess(message) {
-  console.log(`✓ ${message}`);
-}
-
-function showContacts(contacts) {
-  console.log("\n=== All Contacts ===");
-
-  if (contacts.length === 0) {
-    console.log("No contacts found");
-    return;
-  }
-
-  contacts.forEach((contact, index) => {
-    console.log(`${index + 1}. ${contact.name} - ${contact.email} - ${contact.phone}`);
-  });
-
-}
-function showSearchResults(query, contacts) {
-  console.log(`\n=== Search Results for "${query}" ===`);
-
-  if (contacts.length === 0) {
-    console.log(`No contacts found matching "${query}"`);
-    return;
-  }
-
-  contacts.forEach((contact, index) => {
-    console.log(`${index + 1}. ${contact.name} - ${contact.email} - ${contact.phone}`);
-  });
-}
-
 function showHelp() {
-  console.log(`Usage: node contacts.js [command] [arguments]
+  console.log(`
 
 Commands:
-  add "name" "email" "phone"  - Add a new contact
-  list                        - List all contacts
-  search "query"              - Search contacts by name or email
-  delete "email"              - Delete contact by email
-  help                        - Show this help message
+    add <word>              - Add word to dictionary
+    find <word>             - Check if word exists
+    complete <prefix>       - Get completions
+    help                    - Show this message
+    exit                    - Quit program
 
-Examples:
-  node contacts.js add "John Doe" "john@example.com" "555-123-4567"
-  node contacts.js search "john"
-  node contacts.js delete "john@example.com"`);
+            `);
+}
+function showExit() {
+  console.log(`Goodbye!`);
+}
+
+function showInvalidCommand() {
+  console.log("Invalid command. Type 'help' for commands.");
 }
 
 module.exports = {
-  showLoaded,
-  showContactDeleted,
-  showSaved,
-  showLoading,
-  showError,
-  showSuccess,
-  showContacts,
-  showSearchResults,
-  showHelp
+  showAdd,
+  showSuggestions,
+  showFound,
+  showNotFound,
+  showHelp,
+  showExit,
+  showInvalidCommand
 };
