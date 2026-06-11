@@ -48,12 +48,13 @@ function showError(message)
 }
 
 module.exports = {
-  showAdd,
-  showSuggestions,
-  showFound,
-  showNotFound,
-  showHelp,
-  showExit,
-  showInvalidCommand,
-  showError
+    showWelcome,
+    showAdd,
+    showSuggestions,
+    showFound,
+    showNotFound,
+    showHelp,
+    showExit,
+    showInvalidCommand,
+    showError
 };
