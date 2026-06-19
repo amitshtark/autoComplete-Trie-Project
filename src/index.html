@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>auto Complete Trie</title>
+</head>
+<body>
+    <div id="container">
+
+        <div id="add-word-section">
+            <input id="add-input" placeholder="Enter a word to add to dictionary">
+            <button id="addBtn">Add word</button>
+        </div>
+
+        <div id="message-box"></div>
+
+        <div id="autocomplete-section">
+            <input id="suggestion-input" placeholder="Start typing to see suggestions">
+            <div id="suggestion-list"></div>
+        </div>
+
+        <div id="counter-box">
+            <div id="counter-number">0</div>
+            <div id="counter-label">Words in Dictionary</div>
+        </div>
+    </div>
+
+    <script src="./autoCompleteTrieBrowser.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
